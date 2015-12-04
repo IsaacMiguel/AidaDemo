@@ -1,0 +1,24 @@
+#page{
+	font-size: 15px;
+}
+
+.sector{
+	width: 35%;
+	margin-left: 10%;
+	margin-top: 5%;
+	text-align: center;
+	font-size: 2em;
+}
+
+.sectorAdvertising{
+	margin-top: 5%;
+	width: 100%;
+}
+
+.sectorAdvertising .advertising{
+	height: 200px;
+}
+
+.panelSector{
+	padding: 10%;
+}

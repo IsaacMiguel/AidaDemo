@@ -1,0 +1,19 @@
+#page{
+	font-size: 15px;
+	padding: 10%;
+}
+
+li{
+	padding: 10%;
+	text-decoration: none;
+	text-align: center;
+	font-size: 3em;
+}
+
+button{
+	margin-top: 40%;
+}
+
+button p{
+	font-size: 3em;
+}
