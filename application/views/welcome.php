@@ -13,6 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- CSS custom -->
 	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL;?>public/css/main.css">
 
+	<!-- CSS FlipClock -->
+	<link rel="stylesheet" href="<?php echo SITE_URL;?>public/css/flipclock.css">
 </head>
 <body>
 	<div id="page"><!-- Container -->
@@ -24,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						echo '<div class="panel panel-default panelSector">';
 						echo '<div class="panel-body">';
 						echo '<p><strong>' . $d->nombre . '</strong></p>';
-						echo '<label>' . $d->turnoul . '</label>';
+						echo '<div class="clock" style="margin:2em;"></div>';
 						echo '</div>';
 						echo '</div>';
 						echo '</div><!-- ./Div col-md-6 -->';
@@ -47,5 +49,53 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div><!-- ./Col-md-12 -->
 		</div>
 	</div><!-- ./Container -->
+	<script src="<?php echo SITE_URL;?>public/js/jquery-1.11.3.js"></script>
+	<script src="<?php echo SITE_URL;?>public/js/flipclock.js"></script>
+	<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Instantiate a counter
+				clock = new FlipClock($('.clock'), <?php echo $d->turnoul?>, {
+					clockFace: 'Counter'
+				});
+
+				// Attach a click event to a button a increment the clock
+				$('.increment').click(function() {
+					//clock.setValue(10);
+
+					// Or you could decrease the clock
+					// clock.decrement();
+
+					clock.increment();
+
+					// Or set it to a specific value
+					// clock.setValue(x);
+				});
+
+				// Attach a click event to a button a decrement the clock
+				$('.decrement').click(function() {
+					clock.decrement();
+				});
+
+				$('.reset').click(function() {
+					clock.reset();
+				});
+
+				/*
+				// Use this code if you want to autoincrement the counter.
+				var timer = new FlipClock.Timer(clock, {
+					callbacks: {
+						interval: function() {
+							clock.increment();
+						}
+					}
+				});
+
+				timer.start();
+				*/
+			});
+		</script>
 </body>
 </html>

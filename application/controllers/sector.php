@@ -21,5 +21,16 @@ class Sector extends CI_Controller
 
 		$this->load->view('sector', $data);
 	}
+
+	public function RecordDataSector(){
+		$nombre = $this->input->post('nombre');
+		$turnoac = $this->input->post('turnoac');
+
+		$this->load->model('sectores');
+		$this->sectores->RecordDataSector($nombre, $turnoac);
+
+		echo $turnoac;
+		//echo $turnoac;
+	}
 }
 ?>

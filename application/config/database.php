@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['aida'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '127.0.0.1',
 	'username' => 'root',
 	'password' => '',
 	'database' => 'Aida',
