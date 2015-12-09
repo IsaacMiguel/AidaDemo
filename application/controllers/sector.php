@@ -28,9 +28,6 @@ class Sector extends CI_Controller
 
 		$this->load->model('sectores');
 		$this->sectores->RecordDataSector($nombre, $turnoac);
-
-		echo $turnoac;
-		//echo $turnoac;
 	}
 }
 ?>

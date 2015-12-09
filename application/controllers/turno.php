@@ -24,5 +24,12 @@ class Turno extends CI_Controller
 			echo $d->turnoul + 1;
 		}
 	}
+
+	public function recordTurnReq(){
+		$id = $this->input->post('id');
+
+		$this->load->model('turn');
+		$this->turn->updateTurnoUl($id);
+	}
 }
 ?>

@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<?php foreach ($data as $d) {
 								echo "<li class='list-group-item'>";	
 									echo "<div class='panel-body'>";
-										echo "<div class='radio'><label class='radio'><input type='radio' name='radio' id='".$d->codigo."' value='" . $d->codigo . "'/>" . $d->nombre . "</label></div>";
+										echo "<div class='radio'><label class='radio'><input type='radio' name='id' id='".$d->codigo."' value='" . $d->codigo . "'/>" . $d->nombre . "</label></div>";
 									echo "</div>";
 								echo "</li>";	
 							}?>
@@ -42,14 +42,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script type="text/javascript">
 	$(document).ready(function () {
 		$('#send').click(function () {
-			var id = $("input:radio[name ='radio']:checked").val();
+			var id = $("input:radio[name ='id']:checked").val();
 			$.post("<?php echo SITE_URL;?>index.php/turno/printTurn/"+id,
 				{
 					id : id
 				}, function (data) {
 					if (confirm(data)) {
 						$('#page').html(data);
+							$.post("<?php echo SITE_URL;?>index.php/turno/recordTurnReq" ,
+								{
+									id : id
+								});
 						window.print();
+						console.log(id);
 						location.reload();
 					}else{
 						location.reload();

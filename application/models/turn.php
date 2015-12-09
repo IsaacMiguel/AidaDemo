@@ -15,5 +15,9 @@ class Turn extends CI_Model
 
 		return $data->result();
 	}
+
+	public function updateTurnoUl($id){
+		$this->db->query('update sectores set turnoul=turnoul+1 where codigo='.$id);
+	}
 }
 ?>
