@@ -25,4 +25,24 @@ class Welcome extends CI_Controller {
 
 		$this->load->view('welcome', $data);
 	}
+
+	public function reload(){
+		/*$dom = $DOM->loadHTML();
+		$dom = $DOM->getElementByTagName('input');
+
+		for ($i=0; $dom->length > $i; $i++) { 
+			echo $dom->length($i);
+		}*/
+
+		// Create DOM from URL or file
+		$dom = new DOMDocument;
+		$body = $this->input->post('body');
+		$dom->loadHTML($body);
+
+		$html = $dom->getElementsByTagName('input');
+
+		foreach($html as $e) {
+       		echo $e->getAttribute('value');
+		}
+	}
 }

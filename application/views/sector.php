@@ -22,36 +22,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 <!-- First row -->
 			<div class="col-md-12"><!-- Col-md-12 -->
-				<div class="row">
-					<h1><input id="nombre" value="<?php echo $data->nombre?>"></h1>
-				</div>
-				<div class="row">
-					<div class="col-md-2 col-md-offset-1">
-						<button class="btn btn-primary increment">ANT</button>
+				<div class="panel panel-default">
+					<div class="row">
+						<h1><label id="nombre" value="<?php echo $data->nombre?>"><?php echo $data->nombre?></label></h1>
 					</div>
-					<div class="col-md-2">
-						<p>ANTERIOR</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-2 col-md-offset-4">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<div class="clock" style="margin:2em;"></div>
-								<input id="turnoult" value="<?php echo $data->turnoul?>" hidden>
-							</div>
+					<div class="row">
+						<div class="col-md-2 col-md-offset-3 divBot">
+							<button class="btn btn-primary increment">ANTERIOR</button>
 						</div>
 					</div>
-					<div class="col-md-2">
-						<button id="call" class="btn btn-success">LLAMAR</button>
+					<div class="row">
+						<div class="col-md-2 col-md-offset-3">
+							<div class="panel panel-default">
+								<div class="panel-body divBot">
+									<div class="clock" style="margin:2em;"></div>
+									<input id="turnoult" value="<?php echo $data->turnoul?>" hidden>
+								</div>
+							</div>
+						</div>
+						<div id="divCall" class="col-md-2">
+							<button id="call" class="btn btn-success">LLAMAR</button>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-2 col-md-offset-1">
-						<button class="btn btn-primary decrement">PROX</button>
-					</div>
-					<div class="col-md-2">
-						<p>PROXIMO</p>
+					<div class="row">
+						<div class="col-md-2 col-md-offset-3 divBot">
+							<button class="btn btn-primary decrement">PROXIMO</button>
+						</div>
 					</div>
 				</div>
 			</div><!-- ./Col-md-12 -->

@@ -1,6 +1,7 @@
 #page{
 	font-size: 15px;
 	padding: 10%;
+	background-color: #5cbf98;
 }
 
 li{
@@ -16,4 +17,13 @@ button{
 
 button p{
 	font-size: 3em;
+}
+
+
+.panel{
+	margin-top: 5%;
+	border-width: 3px;
+	border-color: black;
+	padding: 5%;
+	background-color: #5cbf98;
 }

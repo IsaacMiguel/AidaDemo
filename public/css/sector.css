@@ -1,0 +1,21 @@
+h1{
+	text-align: center;
+	padding-top: 5%;
+	font-size: 5em;
+}
+
+form{
+	padding-top: 5%;
+	padding-bottom: 15%;
+}
+
+.panel{
+	margin-top: 10%;
+	border-width: 3px;
+	border-color: black;
+	background-color: #5cbf98;
+}
+
+body{
+	background-color: #5cbf98;
+}

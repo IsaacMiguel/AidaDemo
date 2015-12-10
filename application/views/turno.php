@@ -19,22 +19,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 <!-- First row -->
 			<div class="col-md-12"><!-- Col-md-12 -->
-				<div class="row"><!-- Div Row -->
-					<div class="col-md-6"><!-- Div col-md-6 -->
-						<ul class="list-group">
-							<?php foreach ($data as $d) {
-								echo "<li class='list-group-item'>";	
-									echo "<div class='panel-body'>";
-										echo "<div class='radio'><label class='radio'><input type='radio' name='id' id='".$d->codigo."' value='" . $d->codigo . "'/>" . $d->nombre . "</label></div>";
-									echo "</div>";
-								echo "</li>";	
-							}?>
-						</ul>
-					</div><!-- ./Div col-md-6 -->
-					<div class="col-md-6"><!-- Div col-md-6 -->
-						<button type="submit" id="send" name="send" class="btn btn-primary"><p>Imprimir</p></button>
-					</div><!-- ./Div col-md-6 -->
-				</div><!-- ./Div Row -->
+				<div class="panel panel-default">
+					<div class="row"><!-- Div Row -->
+						<div class="col-md-6"><!-- Div col-md-6 -->
+							<ul class="list-group">
+								<?php foreach ($data as $d) {
+									echo "<li class='list-group-item'>";	
+										echo "<div class='panel-body divRadio'>";
+											echo "<div class='radio'><label class='radio'><input type='radio' name='id' id='".$d->codigo."' value='" . $d->codigo . "'/>" . $d->nombre . "</label></div>";
+										echo "</div>";
+									echo "</li>";	
+								}?>
+							</ul>
+						</div><!-- ./Div col-md-6 -->
+						<div class="col-md-6"><!-- Div col-md-6 -->
+							<button type="submit" id="send" name="send" class="btn btn-primary"><p>Imprimir</p></button>
+						</div><!-- ./Div col-md-6 -->
+					</div><!-- ./Div Row -->
+				</div>
 			</div><!-- ./Col-md-12 -->
 		</div>
 	</div><!-- ./Container -->

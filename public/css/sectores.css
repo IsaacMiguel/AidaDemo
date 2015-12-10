@@ -1,11 +1,32 @@
 #page{
-	padding-top: 10%;
+	padding-top: 5%;
+}
+
+#divCall{
+	padding-top: 5%;
+}
+
+#call{
+	font-size: 5em;
+}
+
+.panel{
+	background-color: #5cbf98;
+	padding-top: 5%;
+	padding-bottom: 10%;
+}
+
+#nombre{
+	background-color: #5cbf98;
+	text-align: center;
 }
 
 h1{
 	text-align: center;
+	font-size: 5em;
 }
 
-form{
-	padding-top: 10%;
+.divBot{
+	padding-bottom: 5%;
+	padding-top: 5%;
 }

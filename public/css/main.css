@@ -1,5 +1,6 @@
 #page{
 	font-size: 15px;
+	background-color: #5cbf98;
 }
 
 .sector{
@@ -13,12 +14,17 @@
 .sectorAdvertising{
 	margin-top: 5%;
 	width: 100%;
+	padding-bottom: 0.9%;
 }
 
 .sectorAdvertising .advertising{
-	height: 200px;
+	height: 100px;
 }
 
 .panelSector{
-	padding: 10%;
+	padding: 9%;
+}
+
+.clock{
+	padding-left: 22%;
 }

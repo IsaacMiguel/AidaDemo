@@ -20,13 +20,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div id="page"><!-- Container -->
 		<div class="row">
 			<div class="col-md-12"><!-- Col-md-12 -->
+			<p style="text-align: center; font-size:5em;">TURNOS</p>
 				<div class="row"><!-- Div Row -->
 					<?php foreach ($data as $d) {
 						echo '<div class="col-md-6 sector"><!-- Div col-md-6 -->';
 						echo '<div class="panel panel-default panelSector">';
 						echo '<div class="panel-body">';
 						echo '<p><strong>' . $d->nombre . '</strong></p>';
-						echo '<div class="clock" style="margin:2em;"></div>';
+						echo '<div id=' . $d->codigo . ' class="clock" style="margin:2em;"></div>';
+						echo '<input value=' . $d->codigo . ' hidden>';
 						echo '</div>';
 						echo '</div>';
 						echo '</div><!-- ./Div col-md-6 -->';
@@ -41,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-md-10 sectorAdvertising">
 						<div class="panel panel-default">
 								<div class="panel-body advertising">
-									<p>PUBLICIDAD</p>
+									<p style="text-align: center; font-size:5em;">OFERTA DEL DIA</p>
 								</div>
 							</div>
 						</div>
@@ -55,46 +57,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			var clock;
 
 			$(document).ready(function() {
+				<?php foreach ($data as $d) { ?>
+					// Instantiate a counter
+					clock = new FlipClock($('#<?php echo $d->codigo;?>'), <?php echo $d->turnoul?>, {
+						clockFace: 'Counter'
+					});
+				<?php }?>
 
-				// Instantiate a counter
-				clock = new FlipClock($('.clock'), <?php echo $d->turnoul?>, {
-					clockFace: 'Counter'
-				});
+				setInterval(loadTurns, 4000);
 
-				// Attach a click event to a button a increment the clock
-				$('.increment').click(function() {
-					//clock.setValue(10);
+				function loadTurns () {
+					var body = $('body').html();
 
-					// Or you could decrease the clock
-					// clock.decrement();
-
-					clock.increment();
-
-					// Or set it to a specific value
-					// clock.setValue(x);
-				});
-
-				// Attach a click event to a button a decrement the clock
-				$('.decrement').click(function() {
-					clock.decrement();
-				});
-
-				$('.reset').click(function() {
-					clock.reset();
-				});
-
-				/*
-				// Use this code if you want to autoincrement the counter.
-				var timer = new FlipClock.Timer(clock, {
-					callbacks: {
-						interval: function() {
-							clock.increment();
-						}
-					}
-				});
-
-				timer.start();
-				*/
+					$.post("http://localhost/aida/index.php/welcome/reload",
+						{
+							body : body
+						}, function (data) {
+							console.log(data);
+						});
+					
+				}
 			});
 		</script>
 </body>
