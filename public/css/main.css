@@ -1,6 +1,7 @@
 #page{
+	font-family: funny;
 	font-size: 15px;
-	background-color: #5cbf98;
+	background-color: #47887E;
 }
 
 .sector{
@@ -23,8 +24,14 @@
 
 .panelSector{
 	padding: 9%;
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .clock{
 	padding-left: 22%;
+}
+
+@font-face{
+	font-family: funny;
+	src: url('font/FunSized.ttf');
 }

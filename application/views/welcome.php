@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						echo '<div class="panel-body">';
 						echo '<p><strong>' . $d->nombre . '</strong></p>';
 						echo '<div id=' . $d->codigo . ' class="clock" style="margin:2em;"></div>';
-						echo '<input value=' . $d->codigo . ' hidden>';
+						echo '<input value=' . $d->turnoul . ' class="cValue" hidden>';
 						echo '</div>';
 						echo '</div>';
 						echo '</div><!-- ./Div col-md-6 -->';
@@ -72,8 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$.post("http://localhost/aida/index.php/welcome/reload",
 						{
 							body : body
-						}, function (data) {
-							console.log(data);
+						}, function (datos) {
+							location.reload();
 						});
 					
 				}

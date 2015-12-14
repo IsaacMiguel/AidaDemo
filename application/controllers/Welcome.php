@@ -35,14 +35,25 @@ class Welcome extends CI_Controller {
 		}*/
 
 		// Create DOM from URL or file
-		$dom = new DOMDocument;
+/*		$dom = new DOMDocument;
 		$body = $this->input->post('body');
 		$dom->loadHTML($body);
 
 		$html = $dom->getElementsByTagName('input');
 
 		foreach($html as $e) {
-       		echo $e->getAttribute('value');
+      		$vi[] = array( 'num' => $e->getAttribute('value'));
+		}*/
+		$this->load->model('billboard');
+		$data['data'] = $this->billboard->getSector();
+
+		//print_r($data);
+		foreach ($data['data'] as $d) {
+			//print_r($d);
+			//echo $d->turnoul;
+			echo "clock = new FlipClock($('#" . $d->codigo . "'), " . $d->turnoul . ", {";
+				echo "clockFace: 'Counter'";
+			echo "});\n";
 		}
 	}
 }

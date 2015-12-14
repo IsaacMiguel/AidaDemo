@@ -1,5 +1,6 @@
 #page{
 	padding-top: 5%;
+	font-family: funny;
 }
 
 #divCall{
@@ -29,4 +30,9 @@ h1{
 .divBot{
 	padding-bottom: 5%;
 	padding-top: 5%;
+}
+
+@font-face{
+	font-family: funny;
+	src: url('font/FunSized.ttf');
 }

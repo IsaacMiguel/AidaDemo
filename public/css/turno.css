@@ -1,7 +1,11 @@
+body{
+	font-family: funny;
+}
+
 #page{
 	font-size: 15px;
 	padding: 10%;
-	background-color: #5cbf98;
+	background-color: #47887E;
 }
 
 li{
@@ -25,5 +29,10 @@ button p{
 	border-width: 3px;
 	border-color: black;
 	padding: 5%;
-	background-color: #5cbf98;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+@font-face{
+	font-family: funny;
+	src: url('font/FunSized.ttf');
 }
