@@ -27,26 +27,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<h1><label id="nombre" value="<?php echo $data->nombre?>"><?php echo $data->nombre?></label></h1>
 					</div>
 					<div class="row">
-						<div class="col-md-2 col-md-offset-3 divBot">
-							<button class="btn btn-primary increment">ANTERIOR</button>
+						<div class="col-md-2 col-md-offset-4 divBot">
+							<button class="btn btn-primary increment call">PRÓXIMO</button>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-2 col-md-offset-3">
-							<div class="panel panel-default">
+						<div class="col-md-4 col-md-offset-3">
+							<div class="panel">
 								<div class="panel-body divBot">
 									<div class="clock" style="margin:2em;"></div>
-									<input id="turnoult" value="<?php echo $data->turnoul?>" hidden>
+									<input id="codigo" value="<?php echo $data->codigo?>" hidden>
 								</div>
 							</div>
 						</div>
 						<div id="divCall" class="col-md-2">
-							<button id="call" class="btn btn-success">LLAMAR</button>
+							<button id="call" class="btn btn-success call">LLAMAR</button>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-2 col-md-offset-3 divBot">
-							<button class="btn btn-primary decrement">PROXIMO</button>
+						<div class="col-md-2 col-md-offset-4 divBot">
+							<button class="btn btn-primary decrement call">ANTERIOR</button>
 						</div>
 					</div>
 				</div>
@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$(document).ready(function() {
 
 			// Instantiate a counter
-			clock = new FlipClock($('.clock'), <?php echo $data->turnoul?>, {
+			clock = new FlipClock($('.clock'), <?php echo $data->turnoact?>, {
 				clockFace: 'Counter'
 			});
 
@@ -103,15 +103,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			*/
 
 			$('#call').click( function () {
-				var nombre = $("#nombre").val();
+				var codigo = $("#codigo").val();
 				var time  = clock.getTime();
-				turnoac = time['time'];
+				turnoact = time['time'];
 
-				$.post("http://localhost/aida/index.php/sector/RecordDataSector" ,
-					{
-						nombre : nombre,
-						turnoac : turnoac
-					});
+				$.ajax({
+					url: "http://localhost/aida/index.php/sector/RecordDataSector/",
+					type: 'POST',
+					data: {	codigo: codigo,
+							turnoact: turnoact
+					}
+				});
 			});
 		});
 	</script>

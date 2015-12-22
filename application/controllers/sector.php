@@ -23,11 +23,14 @@ class Sector extends CI_Controller
 	}
 
 	public function RecordDataSector(){
-		$nombre = $this->input->post('nombre');
-		$turnoac = $this->input->post('turnoac');
+		$codigo = $this->input->post('codigo');
+		$turnoact = $this->input->post('turnoact');
 
 		$this->load->model('sectores');
-		$this->sectores->RecordDataSector($nombre, $turnoac);
+		$this->sectores->RecordDataSector($codigo, $turnoact);
+
+		echo $codigo."\n";
+		echo $turnoact;
 	}
 }
 ?>

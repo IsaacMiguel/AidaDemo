@@ -25,8 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="row"><!-- Div Row -->
 						<form method="post" action="sector/loadBoardSector">
-							<div class="col-md-3 col-md-offset-4"><!-- Div col-md-6 -->
-								<select class="form-control"  id='sector' name='sector'>
+							<div class="col-md-4 col-md-offset-4"><!-- Div col-md-6 -->
+								<select  id='sector' name='sector'>
 									<?php
 										foreach ($data as $d) {
 											echo "<option value=".$d->codigo.">".$d->nombre."</option>";
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</select>
 							</div><!-- ./Div col-md-6 -->
 							<div class="col-md-3">
-								<button type="submit" class="btn btn-primary">Cargar</button>
+								<button type="submit" class="btn btn-primary"><p>Cargar</p></button>
 							</div>
 						</form>
 					</div><!-- ./Div Row -->

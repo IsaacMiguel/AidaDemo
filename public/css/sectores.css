@@ -1,24 +1,26 @@
 #page{
 	padding-top: 5%;
-	font-family: funny;
+	font-family: arvo;
+	font-size: 15px;
+	background-color: #b2ffe2;
+	color: #3c3533;
 }
 
 #divCall{
 	padding-top: 5%;
 }
 
-#call{
-	font-size: 5em;
+.call{
+	font-size: 3em;
 }
 
 .panel{
-	background-color: #5cbf98;
+	background-color: #b2ffe2;
 	padding-top: 5%;
 	padding-bottom: 10%;
 }
 
 #nombre{
-	background-color: #5cbf98;
 	text-align: center;
 }
 
@@ -33,6 +35,6 @@ h1{
 }
 
 @font-face{
-	font-family: funny;
-	src: url('font/FunSized.ttf');
+	font-family: arvo;
+	src: url('font/Arvo-Regular.ttf');
 }

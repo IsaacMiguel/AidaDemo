@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -28,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						echo '<div class="panel-body">';
 						echo '<p><strong>' . $d->nombre . '</strong></p>';
 						echo '<div id=' . $d->codigo . ' class="clock" style="margin:2em;"></div>';
-						echo '<input value=' . $d->turnoul . ' class="cValue" hidden>';
+						echo '<input value=' . $d->turnoult . ' class="cValue" hidden>';
 						echo '</div>';
 						echo '</div>';
 						echo '</div><!-- ./Div col-md-6 -->';
@@ -59,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$(document).ready(function() {
 				<?php foreach ($data as $d) { ?>
 					// Instantiate a counter
-					clock = new FlipClock($('#<?php echo $d->codigo;?>'), <?php echo $d->turnoul?>, {
+					clock = new FlipClock($('#<?php echo $d->codigo;?>'), <?php echo $d->turnoult?>, {
 						clockFace: 'Counter'
 					});
 				<?php }?>
@@ -69,10 +67,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				function loadTurns () {
 					var body = $('body').html();
 
-					$.post("http://localhost/aida/index.php/welcome/reload",
+					$.post("<?php echo SITE_URL;?>index.php/welcome/reload",
 						{
 							body : body
 						}, function (datos) {
+							console.log(" - "+datos+" - ");
 							location.reload();
 						});
 					

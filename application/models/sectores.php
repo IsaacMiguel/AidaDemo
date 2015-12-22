@@ -16,8 +16,8 @@ class Sectores extends CI_Model
 		return $data->row();
 	}
 
-	public function RecordDataSector($nombre, $turnoac){
-		$this->db->query("update sectores set turnoac=" . $turnoac . " where nombre='" . $nombre . "'");
+	public function RecordDataSector($codigo, $turnoact){
+		$data = $this->db->query("update sectores set turnoact=" . $turnoact . " where codigo='" . $codigo . "'");
 	}
 }
 ?>
