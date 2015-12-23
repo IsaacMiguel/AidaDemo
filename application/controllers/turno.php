@@ -21,7 +21,7 @@ class Turno extends CI_Controller
 		foreach ($data['data'] as $d) {
 			echo "Sector: " . $d->nombre . " - ";
 			echo "\nNro Turno: ";
-			echo $d->turnoul + 1;
+			echo $d->turnoult + 1;
 		}
 	}
 

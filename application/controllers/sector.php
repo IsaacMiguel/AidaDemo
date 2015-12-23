@@ -26,6 +26,10 @@ class Sector extends CI_Controller
 		$codigo = $this->input->post('codigo');
 		$turnoact = $this->input->post('turnoact');
 
+		if ($turnoact > 9999) {
+			$turnoact = 1;
+		}
+
 		$this->load->model('sectores');
 		$this->sectores->RecordDataSector($codigo, $turnoact);
 

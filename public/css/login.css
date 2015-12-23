@@ -1,0 +1,17 @@
+body{
+	background-color: #b2ffe2;
+	text-align: center;
+	padding-top: 10%;
+}
+
+h3{
+	font-size: 5em;
+}
+
+label{
+	font-size: 2em;	
+}
+
+input{
+	text-align: center;
+}
