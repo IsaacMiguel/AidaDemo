@@ -3,12 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 	
-	public function index()
-	{
-		$this->load->model('billboard');
-		$data['data'] = $this->billboard->getSector();
+	public function index(){
+		if ($this->session->userdata('log') == true) {
+			$this->load->model('billboard');
+			$data['data'] = $this->billboard->getSector();
 
-		$this->load->view('welcome', $data);
+			$this->load->view('welcome', $data);
+		}else{
+			header('Location: ' . SITE_URL);
+		}
 	}
 
 	public function reload(){

@@ -13,11 +13,11 @@ class Login extends CI_Controller
 		$acount = $this->input->post('acount');
 		$password = $this->input->post('password');
 
-		$this->load->model('login');
+		$this->load->model('log');
 
-		$data = $this->login->getUser($acount, $password);
+		$data = $this->log->auth($acount, $password);
 
-		if($data){
+		if($data->clave == $password){
 			$sesData = array(
 				'user' => $acount,
 				'log' => TRUE);
@@ -27,6 +27,11 @@ class Login extends CI_Controller
 		}else{
 			header('Location: ' . SITE_URL);
 		}
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		header('Location: ' . SITE_URL);
 	}
 }
 ?>

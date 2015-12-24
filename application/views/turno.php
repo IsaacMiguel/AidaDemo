@@ -45,24 +45,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$(document).ready(function () {
 		$('#send').click(function () {
 			var id = $("input:radio[name ='id']:checked").val();
-			$.post("<?php echo SITE_URL;?>index.php/turno/printTurn/"+id,
-				{
-					id : id
-				}, function (data) {
-					if (confirm(data)) {
-						$('#page').html(data);
-							$.post("<?php echo SITE_URL;?>index.php/turno/recordTurnReq" ,
-								{
-									id : id
-								});
-						window.print();
-						console.log(id);
-						location.reload();
-					}else{
-						location.reload();
+
+			if (id === undefined) {
+				alert("Debe seleccionar una opcion");
+			}else{
+				$.post("<?php echo SITE_URL;?>index.php/turno/printTurn/"+id,
+					{
+						id : id
+					}, function (data) {
+						if (confirm(data)) {
+							$('#page').html(data);
+								$.post("<?php echo SITE_URL;?>index.php/turno/recordTurnReq" ,
+									{
+										id : id
+									});
+							window.print();
+							console.log(id);
+							location.reload();
+						}else{
+							location.reload();
+						}
 					}
-				}
-			);
+				);
+			}
 		});
 	});
 	</script>

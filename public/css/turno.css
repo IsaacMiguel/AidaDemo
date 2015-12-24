@@ -1,5 +1,5 @@
 body{
-	font-family: funny;
+	font-family: arvo;
 }
 
 #page{
@@ -33,6 +33,6 @@ button p{
 }
 
 @font-face{
-	font-family: funny;
-	src: url('font/FunSized.ttf');
+	font-family: arvo;
+	src: url('font/Arvo-Regular.ttf');
 }

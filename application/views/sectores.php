@@ -15,6 +15,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="<?php echo SITE_URL;?>index.php/login/logout">Logout</a></li>
+	</ul>
+</nav>
 	<div id="page"><!-- Container -->
 		<div class="row">
 <!-- First row -->

@@ -16,34 +16,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="<?php echo SITE_URL;?>index.php/login/logout">Logout</a></li>
+	</ul>
+</nav>
 <div id="page">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-				<h3> - Menu - </h3>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<h1> - Menu - Ir a:</h1>	
+				</div>
+			</div>
 		<hr>
 			<div class="row">
-				<div class="col-md-3">
-					<label for="sectores">Sectores: </label>	
-					<button class="form-control" id="sectores" name="sectores" onclick="redirect_to(this)"></button>
+				<div class="col-md-3 col-md-offset-1">
+					<button class="btn btn-primary" type="button" id="sectores" name="sectores" onclick="redirect_to(this.id)">Sectores</button>
 				</div>
 				<div class="col-md-3">
-					<label for="turnos">Turnos: </label>
-					<button class="form-control" id="turnos" name="turnos" onclick="redirect_to(this)"></button>
+					<button class="btn btn-primary" type="button" id="turnos" name="turnos" onclick="redirect_to(this.id)">Turnos</button>
 				</div>
 				<div class="col-md-3">
-					<label for="Cartel">Cartel: </label>
-					<button class="form-control" id="cartel" name="cartel" onclick="redirect_to(this)"></button>
+					<button class="btn btn-primary" type="button" id="cartel" name="cartel" onclick="redirect_to(this.id)">Cartelera</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script src="<?php echo SITE_URL;?>public/js/jquery-1.11.3.js"></script>
 <script type="text/javascript">
-	$(document).ready(
-		function redirect_to(elem){
-			window.location.href='<?php echo SITE_URL;?>index.php/goTo/'+elem;
-		}
-	);
+	function redirect_to(elem){
+		window.location.href='<?php echo SITE_URL;?>index.php/gotosector/'+elem;
+	}
 </script>
 </body>
 </html>
