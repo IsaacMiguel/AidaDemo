@@ -16,14 +16,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- CSS FlipClock -->
 	<link rel="stylesheet" href="<?php echo SITE_URL;?>public/css/flipclock.css">
 
+	<!-- CSS Toastr -->
+	<link rel="stylesheet" href="<?php echo SITE_URL;?>public/css/toastr.css">
+
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="<?php echo SITE_URL;?>index.php/login/logout">Logout</a></li>
-	</ul>
-</nav>
 	<div id="page"><!-- Container -->
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><p>User / <?php echo $this->session->userdata('user');?></p></a></li>
+			<li class="nav navbar-nav"><a href="<?php echo SITE_URL;?>index.php/login/logout"><p>Logout</p></a></li>
+		</ul>
+	</nav>
+
 		<div class="row">
 <!-- First row -->
 			<div class="col-md-12"><!-- Col-md-12 -->
@@ -31,6 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="row">
 						<h1><label id="nombre" value="<?php echo $data->nombre?>"><?php echo $data->nombre?></label></h1>
 					</div>
+		<hr>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-4 divBot">
 							<button class="btn btn-primary increment call">PRÓXIMO</button>
@@ -61,6 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<script src="<?php echo SITE_URL;?>public/js/jquery-1.11.3.js"></script>
 	<script src="<?php echo SITE_URL;?>public/js/flipclock.js"></script>
+	<script src="<?php echo SITE_URL;?>public/js/toastr.js"></script>
 	<script type="text/javascript">
 		var clock;
 
@@ -113,12 +122,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				turnoact = time['time'];
 
 				$.ajax({
-					url: "http://localhost/aida/index.php/sector/RecordDataSector/",
+					url: "http://192.168.2.2/aida/index.php/sector/RecordDataSector/",
 					type: 'POST',
 					data: {	codigo: codigo,
 							turnoact: turnoact
 					}
 				});
+
+				toastr.options = {
+				  "closeButton": false,
+				  "debug": false,
+				  "newestOnTop": false,
+				  "progressBar": true,
+				  "positionClass": "toast-top-full-width",
+				  "preventDuplicates": false,
+				  "onclick": null,
+				  "showDuration": "300",
+				  "hideDuration": "1000",
+				  "timeOut": "2000",
+				  "extendedTimeOut": "1000",
+				  "showEasing": "swing",
+				  "hideEasing": "linear",
+				  "showMethod": "fadeIn",
+				  "hideMethod": "fadeOut"
+				}
+
+				toastr.info('¡Llamando turno '+time+'!');
 			});
 		});
 	</script>

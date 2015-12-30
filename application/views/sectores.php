@@ -15,18 +15,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="<?php echo SITE_URL;?>index.php/login/logout">Logout</a></li>
-	</ul>
-</nav>
+
 	<div id="page"><!-- Container -->
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><p>User / <?php echo $this->session->userdata('user');?></p></a></li>
+			<li><a href="<?php echo SITE_URL;?>index.php/login/logout">Logout</a></li>
+		</ul>
+	</nav>
+
 		<div class="row">
 <!-- First row -->
 			<div class="col-md-12"><!-- Col-md-12 -->
 				<div class="panel panel-default">
 					<div class="row">
-						<h1>Seleccione su sector</h1>
+						<div class="col-md-8 col-md-offset-2">
+							<p>Seleccione su sector</p>
+						</div>
 					</div>
 					<div class="row"><!-- Div Row -->
 						<form method="post" action="sector/loadBoardSector">

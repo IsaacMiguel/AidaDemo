@@ -16,12 +16,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
+
+<div id="page">
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href="<?php echo SITE_URL;?>index.php/login/logout">Logout</a></li>
+		<li><a href="#"><p>User / <?php echo $this->session->userdata('user');?></p></a></li>
+		<li><a href="<?php echo SITE_URL;?>index.php/login/logout"><p>Logout</p></a></li>
 	</ul>
 </nav>
-<div id="page">
+
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="row">
@@ -32,13 +36,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<hr>
 			<div class="row">
 				<div class="col-md-3 col-md-offset-1">
-					<button class="btn btn-primary" type="button" id="sectores" name="sectores" onclick="redirect_to(this.id)">Sectores</button>
+					<button class="btn btn-primary" type="button" id="sectores" name="sectores" onclick="redirect_to(this.id)"><p>Sectores</p></button>
 				</div>
 				<div class="col-md-3">
-					<button class="btn btn-primary" type="button" id="turnos" name="turnos" onclick="redirect_to(this.id)">Turnos</button>
+					<button class="btn btn-primary" type="button" id="turnos" name="turnos" onclick="redirect_to(this.id)"><p>Turnos</p></button>
 				</div>
 				<div class="col-md-3">
-					<button class="btn btn-primary" type="button" id="cartel" name="cartel" onclick="redirect_to(this.id)">Cartelera</button>
+					<button class="btn btn-primary" type="button" id="cartel" name="cartel" onclick="redirect_to(this.id)"><p>Cartelera</p></button>
 				</div>
 			</div>
 		</div>

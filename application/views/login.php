@@ -15,13 +15,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL;?>public/css/login.css">
 </head>
 <body>
+
+<div id="page">
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<ul class="nav navbar-nav navbar-right">
+		<li><a href="#"><p>User / <?php echo $this->session->userdata('user');?></p></a></li>
 		<li><a href="<?php echo SITE_URL;?>index.php/login/logout">Logout</a></li>
 	</ul>
 </nav>
 
-<div id="page">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 				<h3> - Login - </h3>

@@ -13,6 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- CSS custom -->
 	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL;?>public/css/turno.css">
 
+	<!-- CSS Toastr -->
+	<link rel="stylesheet" href="<?php echo SITE_URL;?>public/css/toastr.css">
+
 </head>
 <body>
 	<div id="page"><!-- Container -->
@@ -26,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<?php foreach ($data as $d) {
 									echo "<li class='list-group-item'>";	
 										echo "<div class='panel-body divRadio'>";
-											echo "<div class='radio'><label class='radio'><input type='radio' name='id' id='".$d->codigo."' value='" . $d->codigo . "'/>" . $d->nombre . "</label></div>";
+											echo "<div class='radio'><label class='radio form-control'><input type='radio' name='id' id='".$d->codigo."' value='" . $d->codigo . "'/>" . $d->nombre . "</label></div>";
 										echo "</div>";
 									echo "</li>";	
 								}?>
@@ -41,6 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div><!-- ./Container -->
 	<script type="text/javascript" src="<?php echo SITE_URL;?>public/js/jquery-1.11.3.js"></script>
+	<script src="<?php echo SITE_URL;?>public/js/toastr.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function () {
 		$('#send').click(function () {
@@ -53,18 +57,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{
 						id : id
 					}, function (data) {
-						if (confirm(data)) {
+						$.post("<?php echo SITE_URL;?>index.php/turno/recordTurnReq" ,
+							{
+								id : id
+							});
+
+						toastr.options = {
+							"closeButton": false,
+							"debug": false,
+							"newestOnTop": false,
+							"progressBar": true,
+							"positionClass": "toast-top-full-width",
+							"preventDuplicates": false,
+							"onclick": null,
+							"showDuration": "300",
+							"hideDuration": "1000",
+							"timeOut": "2000",
+							"extendedTimeOut": "1000",
+							"showEasing": "swing",
+							"hideEasing": "linear",
+							"showMethod": "fadeIn",
+							"hideMethod": "fadeOut"
+						}
+
+						toastr.info('¡Aqui se imprimirá!');
+						/*if (confirm(data)) {
 							$('#page').html(data);
 								$.post("<?php echo SITE_URL;?>index.php/turno/recordTurnReq" ,
 									{
 										id : id
 									});
 							window.print();
-							console.log(id);
 							location.reload();
 						}else{
 							location.reload();
-						}
+						}*/
 					}
 				);
 			}
