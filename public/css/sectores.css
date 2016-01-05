@@ -1,17 +1,9 @@
 #page{
-	padding-top: 5%;
 	font-family: arvo;
-	font-size: 15px;
 	background-color: #b2ffe2;
 	color: #3c3533;
-}
-
-#divCall{
-	padding-top: 5%;
-}
-
-.call{
-	font-size: 3em;
+	font-size: 2em;
+	text-align: center;
 }
 
 .panel{
@@ -24,14 +16,9 @@
 	text-align: center;
 }
 
-h1{
-	text-align: center;
-	font-size: 5em;
-}
-
 .divBot{
-	padding-bottom: 5%;
-	padding-top: 5%;
+	padding-bottom: 2%;
+	padding-top: 3%;
 }
 
 @font-face{

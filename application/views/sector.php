@@ -40,26 +40,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 		<hr>
 					<div class="row">
-						<div class="col-md-2 col-md-offset-4 divBot">
-							<button class="btn btn-primary increment call">PRÓXIMO</button>
+						<div class="col-md-4 col-md-offset-2">
+							<div class="clock" style="margin:2em;"></div>
+							<input id="codigo" value="<?php echo $data->codigo?>" hidden>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4 col-md-offset-3">
-							<div class="panel">
-								<div class="panel-body divBot">
-									<div class="clock" style="margin:2em;"></div>
-									<input id="codigo" value="<?php echo $data->codigo?>" hidden>
-								</div>
-							</div>
+						<div class="col-md-2">
+							<button class="btn btn-lg btn-primary increment call"><p>PRÓXIMO</p></button>
+						<br>
+						<hr>
+							<button class="btn btn-lg btn-primary decrement call"><p>ANTERIOR</p></button>
 						</div>
-						<div id="divCall" class="col-md-2">
-							<button id="call" class="btn btn-success call">LLAMAR</button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-2 col-md-offset-4 divBot">
-							<button class="btn btn-primary decrement call">ANTERIOR</button>
+						<div id="divCall" class="col-md-2 divBot">
+							<button id="call" class="btn btn-lg btn-success call"><p>LLAMAR</p></button>
 						</div>
 					</div>
 				</div>

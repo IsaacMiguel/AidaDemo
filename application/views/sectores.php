@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="panel panel-default">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
-							<p>Seleccione su sector</p>
+							<p class="tit">Seleccione su sector</p>
 						</div>
 					</div>
 					<div class="row"><!-- Div Row -->

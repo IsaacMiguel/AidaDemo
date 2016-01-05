@@ -13,13 +13,23 @@ class Login extends CI_Controller
 		$acount = $this->input->post('acount');
 		$password = $this->input->post('password');
 
+		$acount = strtoupper($acount);
+		$password = strtoupper($password);
+
 		$this->load->model('log');
 
-		$data = $this->log->auth($acount, $password);
+		$data = $this->log->auth($acount);
 
-		if($data->clave == $password){
+		if ($data != false) {
+			$pass = strtoupper($data->pass);
+		}else{
+			$pass = false;
+		}
+
+		if($pass == $password && $pass != false){
 			$sesData = array(
 				'user' => $acount,
+				'num_oferta' => -1,
 				'log' => TRUE);
 
 			$this->session->set_userdata($sesData);

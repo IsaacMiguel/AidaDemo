@@ -1,6 +1,6 @@
 #page{
 	font-family: arvo;
-	font-size: 15px;
+	font-size: 2em;
 	background-color: #b2ffe2;
 	color: #3c3533;
 }
@@ -10,7 +10,6 @@
 	margin-left: 7%;
 	margin-top: 5%;
 	text-align: center;
-	font-size: 4em;
 }
 
 .sectorAdvertising{
@@ -19,13 +18,13 @@
 	padding-bottom: 0.9%;
 }
 
-.sectorAdvertising .advertising{
-	height: 100px;
-}
-
 .panelSector{
 	padding: 9%;
 	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.clock{
+	padding-left: 22%;
 }
 
 @font-face{

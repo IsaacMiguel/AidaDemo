@@ -8,6 +8,17 @@ class Welcome extends CI_Controller {
 			$this->load->model('billboard');
 			$data['data'] = $this->billboard->getSector();
 
+			$data['offer'] = $this->billboard->getOffer();
+			$numOfertas = count($data['offer']);
+			$numOferta = $this->session->userdata('num_oferta');
+
+			if ( $numOferta < $numOfertas-1) {
+				$numOferta++;
+				$this->session->set_userdata('num_oferta', $numOferta);
+			}else{
+				$this->session->set_userdata('num_oferta', 0);
+			}
+
 			$this->load->view('welcome', $data);
 		}else{
 			header('Location: ' . SITE_URL);
@@ -15,33 +26,22 @@ class Welcome extends CI_Controller {
 	}
 
 	public function reload(){
-		/*$dom = $DOM->loadHTML();
-		$dom = $DOM->getElementByTagName('input');
-
-		for ($i=0; $dom->length > $i; $i++) { 
-			echo $dom->length($i);
-		}*/
-
-		// Create DOM from URL or file
-/*		$dom = new DOMDocument;
+		$dom = new DOMDocument;
 		$body = $this->input->post('body');
 		$dom->loadHTML($body);
 
 		$html = $dom->getElementsByTagName('input');
 
-		foreach($html as $e) {
-      		$vi[] = array( 'num' => $e->getAttribute('value'));
-		}*/
+		$i = 0;
 		$this->load->model('billboard');
 		$data['data'] = $this->billboard->getSector();
 
-		//print_r($data);
-		foreach ($data['data'] as $d) {
-			//print_r($d);
-			//echo $d->turnoult;
-			echo "clock = new FlipClock($('#" . $d->codigo . "'), " . $d->turnoult . ", {";
-				echo "clockFace: 'Counter'";
-			echo "});\n";
+		foreach($html as $e) {
+      		if ($e->getAttribute('value') != $data['data'][$i]->turnoult) {
+      			echo "true";
+      			break;
+      		}
+      		$i++;
 		}
 	}
 }

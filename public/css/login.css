@@ -7,3 +7,7 @@ body{
 input{
 	text-align: center;
 }
+
+#page{
+	font-size: 2em;
+}
