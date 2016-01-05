@@ -356,6 +356,6 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
-define('SITE_URL','http://192.168.56.1:81/aida/');
+define('SITE_URL','http://xxx.xxx.xxx.xxx/aida/');
 /* End of file config.php */
 /* Location: ./application/config/config.php */
