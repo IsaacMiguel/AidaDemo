@@ -37,11 +37,11 @@ class Welcome extends CI_Controller {
 		$data['data'] = $this->billboard->getSector();
 
 		foreach($html as $e) {
-      		if ($e->getAttribute('value') != $data['data'][$i]->turnoult) {
-      			echo "true";
-      			break;
-      		}
-      		$i++;
+  		if ($e->getAttribute('value') != $data['data'][$i]->turnoult) {
+  			echo "true";
+  			break;
+  		}
+  		$i++;
 		}
 	}
 }
