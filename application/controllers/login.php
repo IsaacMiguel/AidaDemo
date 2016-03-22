@@ -13,6 +13,8 @@ class Login extends CI_Controller
 		$acount = $this->input->post('acount');
 		$password = $this->input->post('password');
 
+		$acount = urldecode($acount);
+
 		$acount = strtoupper($acount);
 		$password = strtoupper($password);
 
