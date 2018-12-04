@@ -1,3 +1,4 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/IsaacMiguel/AidaDemo?branch=master)](https://bettercodehub.com/)
 # CodeIgniter 2
 Open Source PHP Framework (originally from EllisLab)
 
